@@ -1,0 +1,14 @@
+operator,peak_speedup,baseline
+Sampler,8.5,vs vLLM/FlashInfer
+BF16xFP32 GEMM,3.22,vs cuBLAS FP32/TF32
+Sparse Attn FP8,3.16,vs MIT-BSA / FA3
+Dynamic Decode Attn,2.88,vs static split-k
+Attn BF16 (decode),2.22,vs FlashInfer/FA
+Attn FP8 (decode),2.0,vs FlashInfer/FA3
+Group GEMM FP8 (decode),1.88,vs DeepGEMM
+AllReduce+RMSNorm,1.76,vs NCCL/FlashInfer
+Fused MoE (TP),1.6,vs vLLM/SGLang
+Fused MoE (EP),1.5,vs vLLM/SGLang
+Attn BF16 (prefill),1.33,vs FlashInfer/FA
+Attn FP8 (prefill),1.12,vs FlashInfer/FA3
+Group GEMM FP8 (prefill),1.1,vs DeepGEMM
